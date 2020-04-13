@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/XRgrabSwordandShield.unity
+- path: Assets/Scenes/XRTeleporting.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
