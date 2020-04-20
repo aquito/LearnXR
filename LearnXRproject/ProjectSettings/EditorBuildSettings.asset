@@ -12,5 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/XR_UI.unity
     guid: 31178e5fbd7212e41b50f998a9aab576
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: af79f8916e2aadb47bacef2a04aa0acf,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 028581138420d804d954e4e199d5d2a3,
       type: 2}
