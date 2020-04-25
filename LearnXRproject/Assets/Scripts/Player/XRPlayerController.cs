@@ -140,4 +140,15 @@ public class XRPlayerController : MonoBehaviour
             buttonPressed = false;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Food")
+        {
+            Debug.Log(other.gameObject.name);
+        }
+    }
+
+    
 }
+ 
