@@ -51,6 +51,13 @@ public class XRPlayerController : MonoBehaviour
 
     private List<InputDevice> devices = new List<InputDevice>();
 
+    #region Handling food items
+
+    [SerializeField]
+    private float howLongToKeepFoodAlive = 1.0f;
+
+    #endregion
+
     public enum CapsuleDirection
     {
         XAxis,
@@ -143,9 +150,21 @@ public class XRPlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == "Food")
         {
-            Debug.Log(other.gameObject.name);
+            var foodGameObject = other.gameObject;
+            var audioSource = foodGameObject.GetComponent<AudioSource>();
+            if(!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+
+            Destroy(other.gameObject, howLongToKeepFoodAlive);
+
+            ScoreManager.Instance.score++;
+            UIManager.Instance.SetScore(ScoreManager.Instance.score);
+            
         }
     }
 
